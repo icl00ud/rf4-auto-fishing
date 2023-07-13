@@ -1,4 +1,5 @@
-import time
+import datetime
+import os
 import pyautogui
 
 
@@ -35,3 +36,22 @@ def is_hooked():
         return True
     else:
         return False
+
+
+def capture_screenshot():
+    now = datetime.datetime.now()
+    timestamp = now.strftime("%Y-%m-%d %H-%M-%S")
+
+    destination_folder = os.path.expanduser("~/Documents/images")
+
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
+
+    screenshot = pyautogui.screenshot()
+
+    file_name = f"screenshot_{timestamp}.png"
+
+    file_path = os.path.join(destination_folder, file_name)
+    screenshot.save(file_path)
+
+    print(f"Screenshot salvo em: {file_path}")
