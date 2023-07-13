@@ -48,7 +48,7 @@ def is_hungry():
 
 def eat():
     bread_image_path = "./screenshots/bread.png"
-    pyautogui.press("B")
+    pyautogui.keyDown("B")
 
     if find_image_on_screen(bread_image_path):
         image_position = pyautogui.locateOnScreen(bread_image_path, confidence=0.9)
