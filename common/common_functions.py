@@ -38,6 +38,30 @@ def is_hooked():
         return False
 
 
+def is_hungry():
+    hungry_image_path = "./screenshots/hungry.png"
+    if find_image_on_screen(hungry_image_path):
+        return True
+    else:
+        return False
+
+
+def eat():
+    bread_image_path = "./screenshots/bread.png"
+    pyautogui.press("B")
+
+    if find_image_on_screen(bread_image_path):
+        image_position = pyautogui.locateOnScreen(bread_image_path, confidence=0.9)
+        if image_position:
+            image_center = pyautogui.center(image_position)
+            pyautogui.moveTo(image_center)
+            pyautogui.mouseDown(button="left")
+            pyautogui.mouseUp(button="left")
+        pyautogui.keyUp("B")
+    else:
+        print("Could not found the bread")
+
+
 def capture_screenshot():
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m-%d %H-%M-%S")

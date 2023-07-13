@@ -10,7 +10,7 @@ def launch_bait():
     print("Lançando a isca...")
     pyautogui.mouseDown(button="left")
     pyautogui.keyDown("shift")
-    time.sleep(0.55)
+    time.sleep(0.65)
     pyautogui.keyUp("shift")
     pyautogui.mouseUp(button="left")
     time.sleep(2.3)
