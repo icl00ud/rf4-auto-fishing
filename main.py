@@ -5,7 +5,7 @@ from actions.spinning import start_spinning
 
 def on_press(event):
     global is_running
-    
+
     if event.name == "f3":
         if not is_running:
             is_running = True

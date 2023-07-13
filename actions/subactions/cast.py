@@ -1,17 +1,8 @@
+import os
 import pyautogui
 import time
-
-from common.common_functions import find_image_on_screen
-
-
-def is_ready_for_launch():
-    image_path = "./screenshots/ready-for-launch.png"
-    if find_image_on_screen(image_path):
-        print("Equipamento pronto para lançamento.")
-        return True
-    else:
-        print("Equipamento não está pronto para lançamento.")
-        return False
+from actions.subactions.fish_fight import fight_fish
+from common.common_functions import is_hooked, is_ready_for_launch
 
 
 def launch_bait():
@@ -25,7 +16,21 @@ def launch_bait():
 
 
 def pull_bait():
+    secondsPulling = 0
     print("Puxando a isca...")
     pyautogui.mouseDown(button="left")
-    time.sleep(33)
+    while True:
+        secondsPulling += 1
+        print(f"Segundos puxando: {secondsPulling}")
+        time.sleep(1)  # Espera 1 segundo
+
+        if is_ready_for_launch():
+            break
+
+        if is_hooked():
+            pyautogui.mouseUp(button="left")
+            fight_fish()
+            break
+
     pyautogui.mouseUp(button="left")
+    os.system("cls")

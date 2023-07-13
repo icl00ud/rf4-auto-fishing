@@ -9,6 +9,5 @@ def switch_to_rf4_window():
     if rf4_window:
         rf4_window[0].activate()
         print("Janela do jogo encontrada e ativada.")
-        time.sleep(0.5)
     else:
-        print('Janela não encontrado.')
+        print('Janela não encontrada.')
