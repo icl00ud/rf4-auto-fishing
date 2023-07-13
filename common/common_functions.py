@@ -1,3 +1,4 @@
+import time
 import pyautogui
 
 
@@ -7,18 +8,6 @@ def find_image_on_screen(image_path):
         return True
     else:
         return False
-
-
-def move_mouse(direction, pixels):
-    current_x, current_y = pyautogui.position()
-    if direction == "up":
-        new_y = current_y - pixels
-        pyautogui.moveTo(current_x, new_y, duration=1)
-    elif direction == "down":
-        new_y = current_y + pixels
-        pyautogui.moveTo(current_x, new_y, duration=1)
-    else:
-        raise ValueError("Direção inválida. Use 'up' ou 'down'.")
 
 
 def is_fish_caught():

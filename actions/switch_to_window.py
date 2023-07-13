@@ -1,4 +1,3 @@
-import time
 import pygetwindow as gw
 
 def switch_to_rf4_window():
