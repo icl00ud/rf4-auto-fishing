@@ -48,7 +48,7 @@ def is_hungry():
 
 def eat():
     bread_image_path = "./screenshots/bread.png"
-    pyautogui.keyDown("B")
+    pyautogui.keyDown("T")
 
     if find_image_on_screen(bread_image_path):
         image_position = pyautogui.locateOnScreen(bread_image_path, confidence=0.9)
@@ -57,7 +57,7 @@ def eat():
             pyautogui.moveTo(image_center)
             pyautogui.mouseDown(button="left")
             pyautogui.mouseUp(button="left")
-        pyautogui.keyUp("B")
+        pyautogui.keyUp("T")
     else:
         print("Could not found the bread")
 
