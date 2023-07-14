@@ -9,6 +9,4 @@ def catch_fish():
     pyautogui.mouseUp(button="left")
     pyautogui.mouseUp(button="right")
     capture_screenshot()
-    time.sleep(0.1)
     pyautogui.press("space")
-    time.sleep(0.1)
