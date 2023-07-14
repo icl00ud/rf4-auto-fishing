@@ -14,7 +14,14 @@ def find_image_on_screen(image_path):
 def is_fish_caught():
     image_path = "./screenshots/fish-catched.png"
     image_path2 = "./screenshots/fish-catched-2.png"
-    if find_image_on_screen(image_path) or find_image_on_screen(image_path2):
+    image_path3 = "./screenshots/fish-catched-3.png"
+    image_path4 = "./screenshots/fish-catched-3.png"
+    if (
+        find_image_on_screen(image_path)
+        or find_image_on_screen(image_path2)
+        or find_image_on_screen(image_path3)
+        or find_image_on_screen(image_path4)
+    ):
         print("Peixe capturado!")
         return True
     else:
