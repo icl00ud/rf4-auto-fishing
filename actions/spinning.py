@@ -1,7 +1,7 @@
 from actions.subactions.check_fish_catch import catch_fish
 from actions.subactions.cast import launch_bait, pull_bait_spinning
 from actions.subactions.fish_fight import fight_fish
-from actions.switch_to_window import switch_to_rf4_window
+from common.switch_to_window import switch_to_rf4_window
 from common.common_functions import eat, is_fish_caught, is_hooked, is_hungry, is_ready_for_launch
 
 
