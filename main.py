@@ -1,6 +1,7 @@
 import keyboard
 
 from actions.spinning import start_spinning
+from actions.twitching import start_twitching
 
 
 def on_press(event):
@@ -10,6 +11,10 @@ def on_press(event):
         if not is_running:
             is_running = True
             start_spinning()
+    elif event.name == "f4":
+        if not is_running:
+            is_running = True
+            start_twitching()
     elif event.name == "f8":
         if is_running:
             print("Bot stopped")
@@ -26,5 +31,5 @@ def monitor_keyboard():
 
 
 if __name__ == "__main__":
-    print("Pressione F3 para iniciar e F8 para parar o bot")
+    print("Pressione F3 para spinning e F4 para twitching ou F8 para parar o bot")
     monitor_keyboard()
