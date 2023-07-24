@@ -16,7 +16,7 @@ def launch_bait():
     time.sleep(2.3)
 
 
-def pull_bait():
+def pull_bait_spinning():
     secondsPulling = 0
     print("Puxando a isca...")
     pyautogui.mouseDown(button="left")
@@ -24,6 +24,24 @@ def pull_bait():
         secondsPulling += 1
         print(f"Segundos puxando: {secondsPulling}")
         time.sleep(1)  # Espera 1 segundo
+        if is_ready_for_launch():
+            break
+        if is_hooked():
+            break
+        if is_fish_caught():
+            break
+
+    pyautogui.mouseUp(button="left")
+    os.system("cls")
+
+def pull_bait_twitching():
+    secondsTwitching = 0
+    print("Twitching...")
+    pyautogui.keyDown(button="shift")
+    while True:
+        secondsTwitching += 1
+        print(f"Segundos puxando: {secondsTwitching}")
+        time.sleep(0.5)  # Espera 0.5 segundos
         if is_ready_for_launch():
             break
         if is_hooked():

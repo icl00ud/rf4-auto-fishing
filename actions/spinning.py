@@ -1,5 +1,5 @@
 from actions.subactions.check_fish_catch import catch_fish
-from actions.subactions.cast import launch_bait, pull_bait
+from actions.subactions.cast import launch_bait, pull_bait_spinning
 from actions.subactions.fish_fight import fight_fish
 from actions.switch_to_window import switch_to_rf4_window
 from common.common_functions import eat, is_fish_caught, is_hooked, is_hungry, is_ready_for_launch
@@ -27,9 +27,9 @@ def start_spinning():
                 print("Equipamento pronto para lançamento.")
                 ready_for_launch_printed = True
             launch_bait()
-            pull_bait()
+            pull_bait_spinning()
         else:
-            pull_bait()
+            pull_bait_spinning()
             if not not_ready_for_launch_printed:
                 print("Equipamento não está pronto para lançamento.")
                 not_ready_for_launch_printed = True

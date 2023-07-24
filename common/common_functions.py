@@ -48,8 +48,8 @@ def is_hungry():
 
 def eat():
     bread_image_path = "./screenshots/bread.png"
-    pyautogui.keyDown("B")
-
+    pyautogui.keyDown("T")
+    
     if find_image_on_screen(bread_image_path):
         image_position = pyautogui.locateOnScreen(bread_image_path, confidence=0.9)
         if image_position:
@@ -57,8 +57,9 @@ def eat():
             pyautogui.moveTo(image_center)
             pyautogui.mouseDown(button="left")
             pyautogui.mouseUp(button="left")
-        pyautogui.keyUp("B")
+        pyautogui.keyUp("T")
     else:
+        pyautogui.keyUp("T")
         print("Could not found the bread")
 
 
@@ -66,7 +67,7 @@ def capture_screenshot():
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m-%d %H-%M-%S")
 
-    destination_folder = os.path.expanduser("~/Documents/images")
+    destination_folder = os.path.expanduser("~/OneDrive/Russian Fishing 4 - Images")
 
     if not os.path.exists(destination_folder):
         os.makedirs(destination_folder)

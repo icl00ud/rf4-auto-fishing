@@ -9,12 +9,7 @@ def fight_fish():
     if is_fish_caught():
             catch_fish()
     else:
-        pyautogui.mouseUp(button="left")
-        pyautogui.mouseUp(button="right")
-        pyautogui.keyUp("shift")
-    print("Puxando peixe...")
-    time.sleep(0.1)
-    pyautogui.mouseDown(button="left")
-    pyautogui.mouseDown(button="right")
-    pyautogui.keyDown("shift")
-    
+        print("Puxando peixe...")
+        pyautogui.mouseDown(button="left")
+        pyautogui.mouseDown(button="right")
+        pyautogui.keyDown("shift")
