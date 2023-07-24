@@ -41,7 +41,9 @@ def pull_bait_twitching():
     while True:
         secondsTwitching += 1
         print(f"Seconds Twitching: {secondsTwitching}")
-        time.sleep(0.5)  # Espera 0.5 segundos
+        pyautogui.mouseDown(button="left")
+        time.sleep(0.25)
+        pyautogui.mouseUp(button="left")
         if is_ready_for_launch():
             break
         if is_hooked():
