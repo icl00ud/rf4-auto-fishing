@@ -30,7 +30,8 @@ def is_fish_caught():
 
 def is_ready_for_launch():
     image_path = "./screenshots/ready-for-launch.png"
-    if find_image_on_screen(image_path):
+    image_path_2 = "./screenshots/ready-for-launch-2.png"
+    if find_image_on_screen(image_path) or find_image_on_screen(image_path_2):
         return True
     else:
         return False

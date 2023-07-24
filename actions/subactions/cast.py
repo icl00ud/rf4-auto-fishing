@@ -37,12 +37,12 @@ def pull_bait_spinning():
 def pull_bait_twitching():
     secondsTwitching = 0
     print("Twitching...")
-    pyautogui.keyDown("shift")
     while True:
         secondsTwitching += 1
         print(f"Seconds Twitching: {secondsTwitching}")
         pyautogui.mouseDown(button="left")
-        time.sleep(0.25)
+        pyautogui.click(button="right")
+        time.sleep(1)
         pyautogui.mouseUp(button="left")
         if is_ready_for_launch():
             break
@@ -50,5 +50,5 @@ def pull_bait_twitching():
             break
         if is_fish_caught():
             break
-
-    os.system("cls")
+        pyautogui.click(button="right")
+        os.system("cls")

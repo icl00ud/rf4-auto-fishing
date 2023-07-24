@@ -3,7 +3,7 @@ from actions.subactions.cast import launch_bait, pull_bait_twitching
 from actions.subactions.fish_fight import fight_fish
 from common.switch_to_window import switch_to_rf4_window
 from common.common_functions import eat, is_fish_caught, is_hooked, is_hungry, is_ready_for_launch
-
+from concurrent.futures import ThreadPoolExecutor
 
 def start_twitching():
     print("Iniciando o bot...")
@@ -13,14 +13,26 @@ def start_twitching():
     not_ready_for_launch_printed = False
 
     while True:
-        if is_hungry():
-            eat()    
+        with ThreadPoolExecutor() as executor:
+            futures = [
+                executor.submit(is_hungry),
+                executor.submit(is_fish_caught),
+                executor.submit(is_hooked),
+            ]
 
-        if is_fish_caught():
-            catch_fish()
+            results = [f.result() for f in futures]
 
-        if is_hooked():
-            fight_fish()
+            if any(results):
+                if results[0]:
+                    print("Comendo...")
+                    eat()
+                if results[1]:
+                    print("Capturando peixe...")
+                    catch_fish()
+                if results[2]:
+                    print("Puxando peixe...")
+                    fight_fish()
+                continue
 
         if is_ready_for_launch():
             if not ready_for_launch_printed:
