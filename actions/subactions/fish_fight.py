@@ -1,4 +1,3 @@
-import time
 import pyautogui
 from actions.subactions.check_fish_catch import catch_fish
 

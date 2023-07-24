@@ -26,6 +26,7 @@ def start_spinning():
             if not ready_for_launch_printed:
                 print("Equipamento pronto para lançamento.")
                 ready_for_launch_printed = True
+                
             launch_bait()
             pull_bait_spinning()
         else:
