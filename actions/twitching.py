@@ -15,7 +15,6 @@ def start_twitching():
     while True:
         with ThreadPoolExecutor() as executor:
             futures = [
-                executor.submit(is_hungry),
                 executor.submit(is_fish_caught),
                 executor.submit(is_hooked),
             ]
@@ -24,12 +23,9 @@ def start_twitching():
 
             if any(results):
                 if results[0]:
-                    print("Comendo...")
-                    eat()
-                if results[1]:
                     print("Capturando peixe...")
                     catch_fish()
-                if results[2]:
+                if results[1]:
                     print("Puxando peixe...")
                     fight_fish()
                 continue

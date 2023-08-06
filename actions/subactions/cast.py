@@ -8,8 +8,9 @@ from common.common_functions import is_hooked, is_ready_for_launch, is_fish_caug
 
 def launch_bait():
     print("Lançando a isca...")
-    pyautogui.mouseDown(button="left")
     pyautogui.keyDown("shift")
+    time.sleep(0.3)
+    pyautogui.mouseDown(button="left")
     time.sleep(0.65)
     pyautogui.keyUp("shift")
     pyautogui.mouseUp(button="left")
@@ -50,5 +51,4 @@ def pull_bait_twitching():
             break
         if is_fish_caught():
             break
-        pyautogui.click(button="right")
         os.system("cls")
