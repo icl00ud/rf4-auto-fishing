@@ -4,23 +4,24 @@ import pyautogui
 
 
 def find_image_on_screen(image_path):
-    image_location = pyautogui.locateOnScreen(image_path, confidence=0.8)
-    if image_location:
-        return True
-    else:
+    try:
+        image_location = pyautogui.locateOnScreen(image_path, confidence=0.8)
+        if image_location:
+            return True
+        else:
+            return False
+    except pyautogui.ImageNotFoundException:
         return False
 
 
 def is_fish_caught():
-    image_path = "./screenshots/fish-catched.png"
-    image_path2 = "./screenshots/fish-catched-2.png"
+    image_path = "./screenshots/fish-catched-2.png"
+    image_path2 = "./screenshots/fish-catched-3.png"
     image_path3 = "./screenshots/fish-catched-3.png"
-    image_path4 = "./screenshots/fish-catched-3.png"
     if (
         find_image_on_screen(image_path)
         or find_image_on_screen(image_path2)
         or find_image_on_screen(image_path3)
-        or find_image_on_screen(image_path4)
     ):
         print("Peixe capturado!")
         return True
@@ -29,10 +30,11 @@ def is_fish_caught():
 
 
 def is_ready_for_launch():
-    image_path_2 = "./screenshots/ready-for-launch-2.png"
-    image_path_3 = "./screenshots/ready-for-launch-3.png"
-    image_path_4 = "./screenshots/ready-for-launch-4.png"
-    if find_image_on_screen(image_path_4) or find_image_on_screen(image_path_2) or find_image_on_screen(image_path_3):
+    image_path_1 = './screenshots/ready-for-launch-1.png'
+    image_path_2 = './screenshots/ready-for-launch-2.png'
+    image_path_2 = './screenshots/ready-for-launch-3.png'
+    image_path_3 = './screenshots/ready-for-launch-4.png'
+    if find_image_on_screen(image_path_1) or find_image_on_screen(image_path_2) or find_image_on_screen(image_path_2) or find_image_on_screen(image_path_3):
         return True
     else:
         return False

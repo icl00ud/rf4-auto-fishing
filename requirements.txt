@@ -1,3 +1,4 @@
-opencv-python==4.5.3
-pyautogui==0.9.53
-keyboard==0.13.5
+opencv-python
+pyautogui
+keyboard
+pillow

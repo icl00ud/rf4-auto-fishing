@@ -24,7 +24,7 @@ def pull_bait_spinning():
     while True:
         secondsPulling += 1
         print(f"Segundos puxando: {secondsPulling}")
-        time.sleep(1)  # Espera 1 segundo
+        time.sleep(0.1)  # Espera 1 segundo
         if is_ready_for_launch():
             break
         if is_hooked():
