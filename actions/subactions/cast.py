@@ -1,8 +1,8 @@
 import os
+import threading
 import pyautogui
 import time
-from actions.subactions.check_fish_catch import catch_fish
-from actions.subactions.fish_fight import fight_fish
+import concurrent.futures
 from common.common_functions import is_hooked, is_ready_for_launch, is_fish_caught
 
 
