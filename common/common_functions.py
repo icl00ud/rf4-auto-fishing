@@ -5,7 +5,7 @@ import pyautogui
 
 def find_image_on_screen(image_path):
     try:
-        image_location = pyautogui.locateOnScreen(image_path, confidence=0.8)
+        image_location = pyautogui.locateOnScreen(image_path, confidence=0.8, grayscale=True)
         if image_location:
             return True
         else:
@@ -34,7 +34,12 @@ def is_ready_for_launch():
     image_path_2 = './screenshots/ready-for-launch-2.png'
     image_path_2 = './screenshots/ready-for-launch-3.png'
     image_path_3 = './screenshots/ready-for-launch-4.png'
-    if find_image_on_screen(image_path_1) or find_image_on_screen(image_path_2) or find_image_on_screen(image_path_2) or find_image_on_screen(image_path_3):
+    if (
+        find_image_on_screen(image_path_1) 
+        or find_image_on_screen(image_path_2) 
+        or find_image_on_screen(image_path_2) 
+        or find_image_on_screen(image_path_3)
+    ):
         return True
     else:
         return False
