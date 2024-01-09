@@ -6,7 +6,7 @@ from common.common_functions import eat, is_fish_caught, is_hooked, is_hungry, i
 
 
 def start_spinning():
-    print("Iniciando o bot...")
+    print("Initializing...")
     switch_to_rf4_window()
 
     ready_for_launch_printed = False
@@ -24,7 +24,7 @@ def start_spinning():
 
         if is_ready_for_launch():
             if not ready_for_launch_printed:
-                print("Equipamento pronto para lançamento.")
+                print("Equipment ready for launch.")
                 ready_for_launch_printed = True
                 
             launch_bait()
@@ -32,5 +32,5 @@ def start_spinning():
         else:
             pull_bait_spinning()
             if not not_ready_for_launch_printed:
-                print("Equipamento não está pronto para lançamento.")
+                print("Equipment is not ready for launch.")
                 not_ready_for_launch_printed = True

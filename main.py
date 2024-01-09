@@ -31,5 +31,7 @@ def monitor_keyboard():
 
 
 if __name__ == "__main__":
-    print("Pressione F3 para spinning e F4 para twitching ou F8 para parar o bot")
+    print("F3 - Spinning")
+    print("F4 - Twitching")
+    print("F8 - Break the bot")
     monitor_keyboard()

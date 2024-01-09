@@ -7,6 +7,6 @@ def switch_to_rf4_window():
     
     if rf4_window:
         rf4_window[0].activate()
-        print("Janela do jogo encontrada e ativada.")
+        print("Found the game window and switching to it...")
     else:
-        print('Janela não encontrada.')
+        print('Game window not found')

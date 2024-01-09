@@ -23,7 +23,7 @@ def is_fish_caught():
         or find_image_on_screen(image_path2)
         or find_image_on_screen(image_path3)
     ):
-        print("Peixe capturado!")
+        print("Fish captured!")
         return True
     else:
         return False
@@ -43,7 +43,7 @@ def is_ready_for_launch():
 def is_hooked():
     image_path = "./screenshots/fish-in-line.png"
     if find_image_on_screen(image_path):
-        print("Peixe fisgado!")
+        print("Fish catched!")
         return True
     else:
         return False
@@ -90,4 +90,4 @@ def capture_screenshot():
     file_path = os.path.join(destination_folder, file_name)
     screenshot.save(file_path)
 
-    print(f"Screenshot salvo em: {file_path}")
+    print(f"Screenshot saved at: {file_path}")
