@@ -7,7 +7,7 @@ from common.common_functions import is_hooked, is_ready_for_launch, is_fish_caug
 
 
 def launch_bait():
-    print("Lançando a isca...")
+    print("Launching the bait...")
     pyautogui.keyDown("shift")
     time.sleep(0.3)
     pyautogui.mouseDown(button="left")

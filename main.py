@@ -1,3 +1,4 @@
+import os
 import keyboard
 
 from actions.spinning import start_spinning
@@ -10,10 +11,12 @@ def on_press(event):
     if event.name == "f3":
         if not is_running:
             is_running = True
+            os.system("cls")
             start_spinning()
     elif event.name == "f4":
         if not is_running:
             is_running = True
+            os.system("cls")
             start_twitching()
     elif event.name == "f8":
         if is_running:
@@ -31,6 +34,7 @@ def monitor_keyboard():
 
 
 if __name__ == "__main__":
+    os.system("cls")
     print("F3 - Spinning")
     print("F4 - Twitching")
     print("F8 - Break the bot")
