@@ -79,20 +79,18 @@ def eat():
         print("Could not found the bread")
 
 
-def capture_screenshot():
-    now = datetime.datetime.now()
-    timestamp = now.strftime("%Y-%m-%d %H-%M-%S")
+def capture_trophy_screenshot():
+    if find_image_on_screen('./screenshots/trophy.png'):
+        now = datetime.datetime.now()
+        timestamp = now.strftime("%Y-%m-%d %H-%M-%S")
 
-    destination_folder = os.path.expanduser("~/OneDrive/Russian Fishing 4 - Images")
+        destination_folder = os.path.expanduser("~/Downloads/Russian Fishing 4")
 
-    if not os.path.exists(destination_folder):
-        os.makedirs(destination_folder)
+        if not os.path.exists(destination_folder):
+            os.makedirs(destination_folder)
 
-    screenshot = pyautogui.screenshot()
+        file_name = f"screenshot_{timestamp}.png"
+        file_path = os.path.join(destination_folder, file_name)
 
-    file_name = f"screenshot_{timestamp}.png"
-
-    file_path = os.path.join(destination_folder, file_name)
-    screenshot.save(file_path)
-
-    print(f"Screenshot saved at: {file_path}")
+        screenshot = pyautogui.screenshot()
+        screenshot.save(file_path)
