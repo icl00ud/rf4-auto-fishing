@@ -1,15 +1,12 @@
 import os
+import threading
 import pyautogui
 import time
+import concurrent.futures
 from common.common_functions import is_hooked, is_ready_for_launch, is_fish_caught
 
 
 def launch_bait():
-    # --------- Keys reset
-    pyautogui.keyUp("shift")
-    pyautogui.mouseUp(button="left")
-    # ---------
-    time.sleep(0.1)
     print("Launching the bait...")
     pyautogui.keyDown("shift")
     time.sleep(0.3)
@@ -21,9 +18,6 @@ def launch_bait():
 
 
 def pull_bait_spinning():
-    # --------- Keys reset
-    pyautogui.mouseUp(button="left")
-    # ---------
     secondsPulling = 0
     print("Pulling the bait...")
     pyautogui.mouseDown(button="left")
@@ -37,14 +31,11 @@ def pull_bait_spinning():
             break
         if is_fish_caught():
             break
-        os.system("cls")
 
     pyautogui.mouseUp(button="left")
+    os.system("cls")
 
 def pull_bait_twitching():
-    # --------- Keys reset
-    pyautogui.mouseUp(button="left")
-    # ---------
     secondsTwitching = 0
     print("Twitching...")
     while True:
