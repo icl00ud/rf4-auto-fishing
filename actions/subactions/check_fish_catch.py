@@ -1,12 +1,9 @@
-import time
 import pyautogui
 
-from common.common_functions import capture_trophy_screenshot
+from common.common_functions import capture_trophy_screenshot, release_all_keys
 
 
 def catch_fish():
-    pyautogui.keyUp("shift")
-    pyautogui.mouseUp(button="left")
-    pyautogui.mouseUp(button="right")
+    release_all_keys()
     capture_trophy_screenshot()
     pyautogui.press("space")

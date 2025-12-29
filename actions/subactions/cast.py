@@ -1,9 +1,9 @@
 import os
-import threading
-import pyautogui
 import time
-import concurrent.futures
-from common.common_functions import is_hooked, is_ready_for_launch, is_fish_caught
+
+import pyautogui
+
+from common.common_functions import is_fish_caught, is_hooked, is_ready_for_launch
 
 
 def launch_bait():
@@ -34,6 +34,7 @@ def pull_bait_spinning():
 
     pyautogui.mouseUp(button="left")
     os.system("cls")
+
 
 def pull_bait_twitching():
     secondsTwitching = 0
